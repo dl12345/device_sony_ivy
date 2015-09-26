@@ -26,18 +26,19 @@ $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 $(call inherit-product-if-exists, prebuilts/chromium/webview_prebuilt.mk)
 $(call inherit-product-if-exists, vendor/google/products/gms.mk)
 
+IVY_ROOT = device/sony/ivy/rootdir
 PRODUCT_COPY_FILES += \
-    device/sony/ivy/rootdir/system/etc/BCM4356.hcd:system/etc/firmware/BCM43xx.hcd \
-    device/sony/ivy/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
-    device/sony/ivy/rootdir/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
-    device/sony/ivy/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/ivy/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/sony/ivy/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    device/sony/ivy/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
-
+    $(IVY_ROOT)/system/etc/BCM4356.hcd:system/etc/firmware/BCM43xx.hcd \
+    $(IVY_ROOT)/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
+    $(IVY_ROOT)/system/etc/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
+    $(IVY_ROOT)/system/etc/thermanager.xml:system/etc/thermanager.xml \
+    $(IVY_ROOT)/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(IVY_ROOT)/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(IVY_ROOT)/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
+     
 PRODUCT_NAME := aosp_e6553
 PRODUCT_DEVICE := ivy
-PRODUCT_MODEL := Xperia Z3+ (AOSP)
+PRODUCT_MODEL := Xperia Z3+
 PRODUCT_BRAND := Sony
 PRODUCT_MANUFACTURER := Sony
 
